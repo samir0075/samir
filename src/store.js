@@ -1,28 +1,53 @@
 import { createSlice,configureStore } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
-    name:"counter",
-    initialState:{counter:1,productId:0,price:0,value:0},
-    reducers:{
-        increment(state){
-            state.counter+=1 
+const uiSlice = createSlice({
+    name:"UI",
+    initialState:{
+         players:[],
+         averageAge:0,
+    },
+    reducers:({
+        handleAdd(state,action){
 
+            const newPlayer=action.payload;
+
+
+           state.players.push({
+            "id":newPlayer.id,
+            "first_name":newPlayer.first_name,
+            "age":newPlayer.age,
+           }
+            )
+
+           
 
             
+
+
         },
-        decrement(state){
-            state.counter-=1;
+        handleRemove(state,action){
+        const id=action.payload;
+
+        const existingPlayer=state.players.find((player)=>player.id===id);
+        if(existingPlayer){
+            state.existingPlayer--;
+        
         }
+
+        else if(existingPlayer===1){
+            state.players.find((player)=>player.id!==id)
+
+        }
+        }
+    })
+})
+
+const store =configureStore({
+    reducer:{
+        ui:uiSlice.reducer
     }
 })
 
-
-
-
-const store = configureStore({
-    reducer:counterSlice.reducer
-})
-
-export const counterAction=counterSlice.actions;
+export const uiActions=uiSlice.actions;
 
 export default store;
