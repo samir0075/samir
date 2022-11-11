@@ -1,7 +1,7 @@
 import { createSlice,configureStore } from "@reduxjs/toolkit";
 
 const uiSlice = createSlice({
-    name:"UI",
+    name:"ui",
     initialState:{
          players:[],
          averageAge:0,
@@ -10,12 +10,13 @@ const uiSlice = createSlice({
         handleAdd(state,action){
 
             const newPlayer=action.payload;
+            console.log(newPlayer)
 
 
            state.players.push({
-            "id":newPlayer.id,
-            "first_name":newPlayer.first_name,
-            "age":newPlayer.age,
+            id:newPlayer.id,
+            first_name:newPlayer.first_name,
+            age:newPlayer.age,
            }
             )
 

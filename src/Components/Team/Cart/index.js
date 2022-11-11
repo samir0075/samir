@@ -24,8 +24,9 @@ const Cart = () => {
 
            
                {cartDetail.map((cart)=>(
-                 <div  style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", backgroundColor: "grey", minWidth: "450px", margin: "10px" ,padding:"5px"}}>
-                 <div>{cart.first_name}</div>
+                 <div key={cart.id} id={cart.id} style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly", backgroundColor: "grey", minWidth: "450px", margin: "10px" ,padding:"5px"}}>
+                 <div>{console.log(cartDetail)}
+                    {cart.first_name}</div>
                  <div>{cart.age}</div>
                  <button onClick={handleRemove}>Remove</button>
              </div>
