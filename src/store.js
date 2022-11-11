@@ -19,26 +19,12 @@ const uiSlice = createSlice({
             age:newPlayer.age,
            }
             )
-
-           
-
-            
-
-
         },
         handleRemove(state,action){
         const id=action.payload;
 
-        const existingPlayer=state.players.find((player)=>player.id===id);
-        if(existingPlayer){
-            state.existingPlayer--;
-        
-        }
+            state.players=state.players.filter((player)=>player.id!==id)
 
-        else if(existingPlayer===1){
-            state.players.find((player)=>player.id!==id)
-
-        }
         }
     })
 })

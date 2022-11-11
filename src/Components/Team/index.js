@@ -1,5 +1,5 @@
 import React from 'react'
-import Players from './Cart/Players'
+import Players from '../Players'
 
 const employees = [{ id: 1, first_name: "Jaymee", last_name: "Imm", email: "jimm0@craigslist.org", gender: "Genderqueer", age: 80 },
 { "id": 2, "first_name": "Jody", "last_name": "Themann", "email": "jthemann1@skyrock.com", "gender": "Agender", "age": 29 },

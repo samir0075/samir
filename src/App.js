@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Team from "./Components/Team";
-import Cart from "./Components/Team/Cart";
+import Cart from "./Components/Cart";
 
 
 function App() {
